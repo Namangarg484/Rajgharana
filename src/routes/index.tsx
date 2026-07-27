@@ -9,17 +9,21 @@ import { crafts, fabrics, journal } from "@/data/house";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Rajgharana — Handmade Sarees & Lehengas" },
+      { title: "Raj Gharana Saree — Handmade Sarees & Lehengas" },
       {
         name: "description",
         content:
           "Traditional Indian couture made slowly: Banarasi brocade, Kanjivaram silk, hand zardozi and gota patti. Explore garments in 3D before you visit the atelier.",
       },
-      { property: "og:title", content: "Rajgharana — Handmade Sarees & Lehengas" },
+      { property: "og:title", content: "Raj Gharana Saree — Handmade Sarees & Lehengas" },
       {
         property: "og:description",
         content: "Handwoven sarees and hand-embroidered lehengas, viewable in 3D. Ateliers across India.",
       },
+      { property: "og:image", content: "https://www.rajgharana.online/logo.jpeg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Raj Gharana Saree — Handmade Sarees & Lehengas" },
+      { name: "twitter:image", content: "https://www.rajgharana.online/logo.jpeg" },
     ],
   }),
   component: Home,
