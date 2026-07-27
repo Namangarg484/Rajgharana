@@ -1,0 +1,1 @@
+import{i as e,t}from"./jsx-runtime-DUAcabCT.js";import{t as n}from"./react-DEX2qfRi.js";var r=e(n(),1),i=t();function a({children:e,fallback:t=null}){return o()?(0,i.jsx)(r.Fragment,{children:e}):(0,i.jsx)(r.Fragment,{children:t})}function o(){return r.useSyncExternalStore(s,()=>!0,()=>!1)}function s(){return()=>{}}export{o as n,a as t};

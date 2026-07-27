@@ -23,9 +23,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between gap-6 px-5 sm:px-8">
-        <Link to="/" className="font-display text-xl tracking-tight">
-          Rajgharana
-          <span className="ml-2 align-middle text-[0.5rem] tracking-[0.3em] text-gold">COUTURE</span>
+        <Link to="/" className="flex items-center gap-2">
+          <img src="/logo.jpeg" alt="Raj Gharana Saree" className="h-10 w-auto object-contain" />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
