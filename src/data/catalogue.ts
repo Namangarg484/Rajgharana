@@ -1,0 +1,392 @@
+import type { Collection, Product } from "./types";
+
+export const collections: Collection[] = [
+  {
+    slug: "bridal",
+    name: "Bridal",
+    kicker: "Chapter I",
+    intro:
+      "Lehengas and sarees built for the vows themselves — weighted silks, hand-laid zardozi, and a drape engineered to hold its line through the longest of days.",
+    hero: {
+      alt: "Bride in a hand-embroidered bridal lehenga",
+      note: "Full-length bridal look, plain wall, natural side light",
+      ratio: "16/9",
+    },
+  },
+  {
+    slug: "festive",
+    name: "Festive",
+    kicker: "Chapter II",
+    intro:
+      "Lighter weaves and quieter embellishment for the season of gatherings. Made to move, made to sit down in, made to wear again.",
+    hero: {
+      alt: "Festive saree photographed in daylight",
+      note: "Three-quarter festive look, courtyard daylight",
+      ratio: "16/9",
+    },
+  },
+  {
+    slug: "heritage",
+    name: "Heritage",
+    kicker: "Chapter III",
+    intro:
+      "Loom-faithful pieces sourced from Varanasi, Kanchipuram and Bengal. Nothing reinterpreted, nothing shortcut.",
+    hero: {
+      alt: "Handloom heritage saree on the loom",
+      note: "Loom detail with warp threads in focus",
+      ratio: "16/9",
+    },
+  },
+  {
+    slug: "sale",
+    name: "The Sale Edit",
+    kicker: "Chapter IV",
+    intro:
+      "A short list of archive and end-of-season pieces at reduced prices. One of each, largely — when it is gone it does not return.",
+    hero: {
+      alt: "Archive garments on a rail",
+      note: "Rail of garments, neutral studio, soft shadow",
+      ratio: "16/9",
+    },
+  },
+];
+
+const img = (alt: string, note: string, ratio: Product["images"][number]["ratio"] = "3/4") => ({
+  alt,
+  note,
+  ratio,
+});
+
+export const products: Product[] = [
+  {
+    slug: "navrangi-maroon-lehenga",
+    name: "Navrangi Maroon Lehenga",
+    collection: "bridal",
+    category: "Lehenga",
+    price: 268000,
+    fabric: "banarasi-brocade",
+    fabricLabel: "Pure Banarasi brocade",
+    craft: "zardozi",
+    craftLabel: "Hand zardozi",
+    region: "Varanasi",
+    occasion: ["Wedding", "Reception"],
+    colour: "Maroon",
+    colourways: [
+      { name: "Maroon", oklch: [0.34, 0.13, 22] },
+      { name: "Deep Emerald", oklch: [0.36, 0.09, 158] },
+      { name: "Midnight", oklch: [0.28, 0.06, 268] },
+    ],
+    shortCopy: "Handwoven heritage, modern flair.",
+    description:
+      "Woven from pure Banarasi silk and lavishly embroidered with gold zardozi florals, this lehenga marries royal opulence with modern grace. The full-circle skirt and precisely fitted blouse create a silhouette that holds through the ceremony and the hours after it.",
+    details: [
+      "Full-circle skirt, 24 panels, cotton-lined",
+      "Approx. 640 hours of hand embroidery",
+      "Comes with matching brocade dupatta",
+      "Dry clean by a specialist only",
+    ],
+    images: [
+      img("Maroon Banarasi bridal lehenga, full look", "Full look, front, plain backdrop"),
+      img("Gold zardozi hem detail", "Hem close-up, raking light", "1/1"),
+      img("Bride seated in the lehenga", "Seated three-quarter, editorial", "4/5"),
+    ],
+  },
+  {
+    slug: "ivory-zari-saree",
+    name: "Ivory Zari Saree",
+    collection: "heritage",
+    category: "Saree",
+    price: 96000,
+    fabric: "kanjivaram",
+    fabricLabel: "Kanjivaram silk",
+    craft: "zari-weave",
+    craftLabel: "Loom zari",
+    region: "Kanchipuram",
+    occasion: ["Ceremony", "Day event"],
+    colour: "Ivory",
+    colourways: [
+      { name: "Ivory", oklch: [0.93, 0.02, 92] },
+      { name: "Oyster", oklch: [0.88, 0.02, 78] },
+    ],
+    shortCopy: "A loom-true weave, undecorated.",
+    description:
+      "A Kanchipuram weave in ivory with a fine gold zari border, made on a pit loom over eleven weeks. The pallu carries a single repeating temple motif and nothing else — the restraint is the point.",
+    details: [
+      "Pit-loom woven, 100% mulberry silk",
+      "Contrast zari border, 4 inch",
+      "Unstitched blouse piece included",
+    ],
+    images: [
+      img("Ivory Kanjivaram saree draped", "Draped on form, full length"),
+      img("Gold zari border detail", "Border macro, weave visible", "1/1"),
+    ],
+  },
+  {
+    slug: "gulaab-blush-anarkali",
+    name: "Gulaab Blush Anarkali",
+    collection: "festive",
+    category: "Anarkali",
+    price: 74000,
+    mrp: 118000,
+    fabric: "georgette",
+    fabricLabel: "Silk georgette",
+    craft: "gota-patti",
+    craftLabel: "Gota patti",
+    region: "Jaipur",
+    occasion: ["Mehendi", "Festive"],
+    colour: "Blush",
+    colourways: [
+      { name: "Blush", oklch: [0.86, 0.05, 20] },
+      { name: "Pistachio", oklch: [0.86, 0.05, 130] },
+    ],
+    shortCopy: "Jaipur gota, weightless georgette.",
+    description:
+      "Silk georgette cut long and full, edged in Jaipuri gota patti applied by hand in a running vine. Light enough to dance in, structured enough to photograph cleanly.",
+    details: ["Floor-length, 12 metre flare", "Hand-applied gota vine at hem and cuff", "Lined in cotton mul"],
+    images: [
+      img("Blush anarkali, full look", "Full look with movement"),
+      img("Gota patti cuff detail", "Cuff macro", "1/1"),
+    ],
+  },
+  {
+    slug: "raat-velvet-lehenga",
+    name: "Raat Velvet Lehenga",
+    collection: "bridal",
+    category: "Lehenga",
+    price: 312000,
+    fabric: "velvet",
+    fabricLabel: "Silk velvet",
+    craft: "sequin",
+    craftLabel: "Glass sequin & bead",
+    region: "Kolkata",
+    occasion: ["Reception", "Sangeet"],
+    colour: "Midnight",
+    colourways: [
+      { name: "Midnight", oklch: [0.26, 0.06, 268] },
+      { name: "Wine", oklch: [0.3, 0.11, 18] },
+    ],
+    shortCopy: "Velvet that drinks the light.",
+    description:
+      "A silk velvet lehenga worked in matte glass sequins and cut beads so the surface reads as texture rather than shine. Cut with a boned bodice and a hem that falls in sculptural folds.",
+    details: ["Boned, corseted bodice", "Matte glass sequin field", "Detachable trailing dupatta"],
+    images: [
+      img("Midnight velvet lehenga", "Full look, dark studio"),
+      img("Sequin field close-up", "Sequin macro, low key", "1/1"),
+    ],
+  },
+  {
+    slug: "kantha-ochre-saree",
+    name: "Kantha Ochre Saree",
+    collection: "heritage",
+    category: "Saree",
+    price: 58000,
+    fabric: "dupion-silk",
+    fabricLabel: "Dupion silk",
+    craft: "kantha",
+    craftLabel: "Kantha running stitch",
+    region: "Bengal",
+    occasion: ["Day event", "Festive"],
+    colour: "Ochre",
+    colourways: [
+      { name: "Ochre", oklch: [0.68, 0.11, 78] },
+      { name: "Indigo", oklch: [0.4, 0.08, 260] },
+    ],
+    shortCopy: "Nine months of running stitch.",
+    description:
+      "Dupion silk covered edge to edge in kantha running stitch by a single artisan in Bolpur. The slubs of the dupion catch the thread differently across the length, so no two metres read alike.",
+    details: ["Single-artisan kantha, ~9 months", "Slubbed dupion ground", "Signed on the pallu"],
+    images: [
+      img("Ochre kantha saree", "Full drape, warm daylight"),
+      img("Kantha stitch macro", "Stitch macro", "1/1"),
+    ],
+  },
+  {
+    slug: "sheesha-emerald-sharara",
+    name: "Sheesha Emerald Sharara",
+    collection: "festive",
+    category: "Sharara",
+    price: 88000,
+    mrp: 132000,
+    fabric: "organza",
+    fabricLabel: "Silk organza",
+    craft: "mirror",
+    craftLabel: "Sheesha mirror work",
+    region: "Kutch",
+    occasion: ["Sangeet", "Festive"],
+    colour: "Emerald",
+    colourways: [
+      { name: "Emerald", oklch: [0.5, 0.11, 158] },
+      { name: "Saffron", oklch: [0.72, 0.14, 66] },
+    ],
+    shortCopy: "Kutchi mirrors on air.",
+    description:
+      "Silk organza sharara scattered with hand-set Kutchi sheesha mirrors, each held by a worked thread ring rather than glue. Sheer layered over sheer for depth without weight.",
+    details: ["Hand-set mirror, thread-bound", "Double organza layer", "Matching short kurta"],
+    images: [
+      img("Emerald organza sharara", "Full look with motion"),
+      img("Mirror work detail", "Mirror macro", "1/1"),
+    ],
+  },
+  {
+    slug: "chandni-silver-saree",
+    name: "Chandni Silver Saree",
+    collection: "festive",
+    category: "Saree",
+    price: 64000,
+    fabric: "georgette",
+    fabricLabel: "Silk georgette",
+    craft: "zardozi",
+    craftLabel: "Silver zardozi",
+    region: "Lucknow",
+    occasion: ["Evening", "Reception"],
+    colour: "Pewter",
+    colourways: [
+      { name: "Pewter", oklch: [0.72, 0.01, 260] },
+      { name: "Charcoal", oklch: [0.34, 0.01, 260] },
+    ],
+    shortCopy: "Silver thread on smoke.",
+    description:
+      "A pewter georgette saree carrying fine silver zardozi in a scattered star repeat. It moves like water and reads as texture at distance, as metal up close.",
+    details: ["Silver-toned zardozi", "Featherweight georgette", "Ready-to-wear pleating option"],
+    images: [
+      img("Pewter georgette saree", "Full drape, evening light"),
+      img("Silver zardozi star detail", "Detail macro", "1/1"),
+    ],
+  },
+  {
+    slug: "haldi-marigold-lehenga",
+    name: "Haldi Marigold Lehenga",
+    collection: "festive",
+    category: "Lehenga",
+    price: 52000,
+    mrp: 84000,
+    fabric: "dupion-silk",
+    fabricLabel: "Dupion silk",
+    craft: "gota-patti",
+    craftLabel: "Gota patti",
+    region: "Jaipur",
+    occasion: ["Haldi", "Mehendi"],
+    colour: "Marigold",
+    colourways: [
+      { name: "Marigold", oklch: [0.76, 0.15, 76] },
+      { name: "Rose", oklch: [0.68, 0.13, 12] },
+    ],
+    shortCopy: "For the morning of.",
+    description:
+      "Marigold dupion, gota edging, and a short blouse cut for heat. Designed for the haldi and everything sticky that follows it.",
+    details: ["Washable lining", "Gota-edged hem", "Elasticated waist option"],
+    images: [
+      img("Marigold haldi lehenga", "Full look, sunlit courtyard"),
+      img("Gota hem detail", "Hem detail", "1/1"),
+    ],
+  },
+  {
+    slug: "mughal-wine-lehenga",
+    name: "Mughal Wine Lehenga",
+    collection: "bridal",
+    category: "Lehenga",
+    price: 224000,
+    mrp: 298000,
+    fabric: "velvet",
+    fabricLabel: "Silk velvet",
+    craft: "zardozi",
+    craftLabel: "Hand zardozi",
+    region: "Delhi",
+    occasion: ["Wedding", "Reception"],
+    colour: "Wine",
+    colourways: [
+      { name: "Wine", oklch: [0.32, 0.12, 16] },
+      { name: "Forest", oklch: [0.33, 0.08, 150] },
+    ],
+    shortCopy: "Paisley borders, palace weight.",
+    description:
+      "Wine silk velvet with gold zardozi paisley borders drawn from a Mughal jali. Heavy in the hand, quiet in the room.",
+    details: ["Zardozi paisley border, 9 inch", "Canvas-interlined waistband", "Archive piece, one only"],
+    images: [
+      img("Wine velvet bridal lehenga", "Full look, dark ground"),
+      img("Zardozi paisley border", "Border macro", "1/1"),
+    ],
+  },
+  {
+    slug: "jamdani-mist-saree",
+    name: "Jamdani Mist Saree",
+    collection: "heritage",
+    category: "Saree",
+    price: 42000,
+    fabric: "organza",
+    fabricLabel: "Cotton-silk jamdani",
+    craft: "zari-weave",
+    craftLabel: "Discontinuous weft",
+    region: "Bengal",
+    occasion: ["Day event"],
+    colour: "Mist",
+    colourways: [
+      { name: "Mist", oklch: [0.88, 0.015, 200] },
+      { name: "Sand", oklch: [0.88, 0.02, 80] },
+    ],
+    shortCopy: "Woven air, Dhaka technique.",
+    description:
+      "A jamdani in mist grey, its motifs inserted by hand as a discontinuous weft while the ground is being woven. The back is as clean as the front.",
+    details: ["Handloom jamdani", "Cotton-silk blend", "Approx. 5.5 metres"],
+    images: [
+      img("Mist grey jamdani saree", "Full drape, high key"),
+      img("Jamdani motif detail", "Motif macro", "1/1"),
+    ],
+  },
+  {
+    slug: "archive-teal-saree",
+    name: "Archive Teal Saree",
+    collection: "sale",
+    category: "Saree",
+    price: 39000,
+    mrp: 72000,
+    fabric: "banarasi-brocade",
+    fabricLabel: "Banarasi brocade",
+    craft: "zari-weave",
+    craftLabel: "Loom zari",
+    region: "Varanasi",
+    occasion: ["Festive"],
+    colour: "Teal",
+    colourways: [{ name: "Teal", oklch: [0.5, 0.08, 200] }],
+    shortCopy: "Archive release, one only.",
+    description:
+      "A teal Banarasi from a discontinued 2023 warp, released from the archive at a reduced price. Minor loom variation across the pallu, as expected of the technique.",
+    details: ["Archive stock, final sale", "One piece only", "Loom variation present"],
+    images: [
+      img("Teal Banarasi saree", "Full drape, neutral studio"),
+      img("Teal brocade detail", "Brocade macro", "1/1"),
+    ],
+  },
+  {
+    slug: "archive-ivory-anarkali",
+    name: "Archive Ivory Anarkali",
+    collection: "sale",
+    category: "Anarkali",
+    price: 46000,
+    mrp: 92000,
+    fabric: "georgette",
+    fabricLabel: "Silk georgette",
+    craft: "sequin",
+    craftLabel: "Bead & sequin",
+    region: "Kolkata",
+    occasion: ["Reception"],
+    colour: "Ivory",
+    colourways: [{ name: "Ivory", oklch: [0.92, 0.02, 92] }],
+    shortCopy: "End of season, half price.",
+    description:
+      "Ivory georgette anarkali densely beaded at the yoke, from the closing run of last season. Sample condition, inspected and released.",
+    details: ["Sample condition", "Final sale, no exchange", "Size 10 only"],
+    images: [
+      img("Ivory beaded anarkali", "Full look, neutral studio"),
+      img("Beaded yoke detail", "Yoke macro", "1/1"),
+    ],
+  },
+];
+
+export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
+export const getCollection = (slug: string) => collections.find((c) => c.slug === slug);
+export const productsIn = (slug: string) => products.filter((p) => p.collection === slug);
+export const saleProducts = products.filter((p) => typeof p.mrp === "number");
+
+export const inr = (n: number) =>
+  new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(n);
