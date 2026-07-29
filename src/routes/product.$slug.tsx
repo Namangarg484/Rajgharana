@@ -1,5 +1,6 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { GarmentViewer } from "@/components/three/Viewers";
 import { ImageFrame } from "@/components/site/ImageFrame";
 import { ProductCard } from "@/components/site/ProductCard";
@@ -43,6 +44,15 @@ function ProductPage() {
   const [colourIndex, setColourIndex] = useState(0);
   const [detail, setDetail] = useState(false);
   const [added, setAdded] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (product.images.length <= 1) return;
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % product.images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [product.images.length]);
 
   const colourway = product.colourways[colourIndex];
   const hex = oklchToHex(colourway.oklch[0], colourway.oklch[1], colourway.oklch[2]);
@@ -77,10 +87,56 @@ function ProductPage() {
               Rendered from the {fabric.name.toLowerCase()} material profile
             </span>
           </div>
-          <div className="grid gap-5 p-5 sm:grid-cols-2 sm:p-8">
-            {product.images.map((slot) => (
-              <ImageFrame key={slot.note} slot={slot} />
-            ))}
+          <div className="relative overflow-hidden p-5 sm:p-8 flex items-center justify-center">
+            {product.images.length > 0 && (
+              <div className="relative w-full aspect-[3/4] overflow-hidden">
+                {product.images.map((slot, index) => (
+                  <div
+                    key={slot.note}
+                    className={cn(
+                      "absolute inset-0 transition-opacity duration-1000 ease-in-out",
+                      index === currentImageIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                    )}
+                  >
+                    <ImageFrame slot={slot} className="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+            )}
+            
+            {product.images.length > 1 && (
+              <>
+                <button
+                  type="button"
+                  onClick={() => setCurrentImageIndex((prev) => (prev - 1 + product.images.length) % product.images.length)}
+                  className="absolute left-8 top-1/2 -translate-y-1/2 z-20 flex size-10 items-center justify-center rounded-full bg-background/50 text-foreground backdrop-blur-md transition-colors hover:bg-background/80 border border-border/50"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="size-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setCurrentImageIndex((prev) => (prev + 1) % product.images.length)}
+                  className="absolute right-8 top-1/2 -translate-y-1/2 z-20 flex size-10 items-center justify-center rounded-full bg-background/50 text-foreground backdrop-blur-md transition-colors hover:bg-background/80 border border-border/50"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="size-5" />
+                </button>
+                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                  {product.images.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentImageIndex(idx)}
+                      className={cn(
+                        "size-2.5 rounded-full transition-colors",
+                        idx === currentImageIndex ? "bg-foreground" : "bg-foreground/30 hover:bg-foreground/50 border border-border/50"
+                      )}
+                      aria-label={`Go to slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </div>
 
