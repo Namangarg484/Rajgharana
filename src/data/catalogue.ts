@@ -87,11 +87,11 @@ export const products: Product[] = [
       "Dry clean by a specialist only",
     ],
     images: [
-      img("Maroon Banarasi bridal lehenga, full look", "Full look, front, plain backdrop", "3/4", "/IMG_5409.jpg"),
-      img("Gold zardozi hem detail", "Hem close-up, raking light", "3/4", "/IMG_5410.jpg"),
-      img("Bride seated in the lehenga", "Seated three-quarter, editorial", "3/4", "/IMG_5411.jpg"),
-      img("Lehenga back detail", "Back detail", "3/4", "/IMG_5412.jpg"),
-      img("Lehenga dupatta drape", "Dupatta detail", "3/4", "/IMG_5413.jpg"),
+      img("Maroon Banarasi bridal lehenga, full look", "Full look, front, plain backdrop", "3/4", "/products/IMG_5409.jpg"),
+      img("Gold zardozi hem detail", "Hem close-up, raking light", "3/4", "/products/IMG_5410.jpg"),
+      img("Bride seated in the lehenga", "Seated three-quarter, editorial", "3/4", "/products/IMG_5411.jpg"),
+      img("Lehenga back detail", "Back detail", "3/4", "/products/IMG_5412.jpg"),
+      img("Lehenga dupatta drape", "Dupatta detail", "3/4", "/products/IMG_5413.jpg"),
     ],
   },
   {
